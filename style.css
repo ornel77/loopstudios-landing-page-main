@@ -82,7 +82,7 @@ header nav {
 header nav .logo {
     width: 144px;
     z-index: 10;
-    padding: 24px;
+    padding: 0 24px;
     
 }
 
@@ -190,3 +190,29 @@ header h1 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+/* -------------------------------------------------------------------------- */
+/*                             SECTION INTERACTIVE                            */
+/* -------------------------------------------------------------------------- */
+.interactive {
+    margin-top: 100px;
+    text-align: center;
+}
+.interactive-description {
+    padding: 24px;
+}
+
+.interactive-description h2 {
+    margin-top: 48px;
+    font-size: 32px;
+}
+
+
+
+.interactive-description .interactive-text {
+    margin-top: 16px;
+    color: hsla(0, 0%, 0%, 50%);
+    line-height: 25px;
+}
+
