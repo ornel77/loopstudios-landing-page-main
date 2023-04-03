@@ -216,3 +216,58 @@ header h1 {
     line-height: 25px;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                              SECTION CREATION                              */
+/* -------------------------------------------------------------------------- */
+.creations {
+    margin-top: 100px;
+}
+
+.creations h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 48px;
+}
+.creations .image-box {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 20px 20px;
+    margin-bottom: 24px;
+}
+.creations .img-title {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: lighter;
+}
+
+.creations .img-title .title-break {
+    display: block;
+}
+
+.creations .bg1 {
+    background: url('./images/mobile/image-deep-earth.jpg') no-repeat center/cover;
+}
+.creations .bg2 {
+    background: url('./images/mobile/image-night-arcade.jpg') no-repeat center/cover;
+}
+.creations .bg3 {
+    background: url('./images/mobile/image-soccer-team.jpg') no-repeat center/cover;
+}
+.creations .bg4 {
+    background: url('./images/mobile/image-grid.jpg') no-repeat center/cover;
+}
+.creations .bg5 {
+    background: url('./images/mobile/image-from-above.jpg') no-repeat center/cover;
+}
+.creations .bg6 {
+    background: url('./images/mobile/image-pocket-borealis.jpg') no-repeat center/cover;
+}
+.creations .bg7 {
+    background: url('./images/mobile/image-curiosity.jpg') no-repeat center/cover;
+}
+.creations .bg8 {
+    background: url('./images/mobile/image-fisheye.jpg') no-repeat center/cover;
+}
+
