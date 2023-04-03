@@ -26,6 +26,7 @@ body {
     font-family: var(--font-alata);
     font-weight: 400;
     color: var(--black);
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,6 +38,7 @@ a {
     font: inherit;
     color: var(--white);
     text-decoration: none;
+    display: inline-block;
 }
 
 ul {
@@ -53,4 +55,138 @@ button {
     border: 0;
     background: transparent;
     cursor: pointer;
+}
+
+.container {
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   HEADER                                   */
+/* -------------------------------------------------------------------------- */
+header {
+    background: url("./images/mobile/image-hero.jpg") no-repeat center/cover;
+    min-height: 100vh;
+    /* position: relative; */
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+header nav .logo {
+    width: 144px;
+    z-index: 10;
+    padding: 24px;
+    
+}
+
+/* Burger menu START */
+header nav .menu {
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    /* height: 0; */
+    visibility: hidden;
+    opacity: 0;
+    padding-top: 159px;
+    transition: all 0.3s ease-in-out;
+}
+
+header nav .menu.overlay {
+    visibility: visible;
+    opacity: 1;
+    background: var(--black);
+    padding-left: 24px;
+  }
+
+header nav .menu a {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: var(--font-josefin);
+    margin-bottom: 24px;
+}
+
+#burger-menu {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+    margin-right: 24px;
+}
+
+#burger-menu span::before,
+#burger-menu span::after {
+    content: "";
+}
+#burger-menu span,
+#burger-menu span::before,
+#burger-menu span::after {
+    background: var(--white);
+    display: block;
+    width: 24px;
+    height: 2px;
+    opacity: 1;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+}
+
+#burger-menu span:before {
+    left: 0px;
+    top: -10px;
+}
+#burger-menu span {
+    right: 0px;
+    top: 13px;
+}
+#burger-menu span:after {
+    left: 0px;
+    top: 10px;
+}
+
+#burger-menu.close span:before {
+    top: 0px;
+    transform: rotate(90deg);
+    width: 24px;
+}
+#burger-menu.close span {
+    transform: rotate(-45deg);
+    top: 13px;
+    width: 24px;
+}
+#burger-menu.close span:after {
+    top: 0px;
+    left: 0;
+    transform: rotate(90deg);
+    opacity: 0;
+    width: 0;
+}
+
+/* Burger menu END */
+
+/* heading title */
+header .heading-title {
+    padding: 20px;
+}
+header h1 {
+    color: var(--white);
+    font-size: 40px;
+    font-weight: 300;
+    border: 1px solid var(--white);
+    padding: 24px;
+    
+    position: absolute;
+    /* right: 0; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
