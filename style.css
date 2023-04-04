@@ -69,14 +69,14 @@ button {
 header {
     background: url("./images/mobile/image-hero.jpg") no-repeat center/cover;
     min-height: 100vh;
-    /* position: relative; */
+    position: relative;
 }
 
 header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    padding-top: 40px;
 }
 
 header nav .logo {
@@ -315,11 +315,14 @@ header h1 {
 footer {
     background-color: var(--black);
     color: var(--white);
+    
+    padding: 56px 0;
+    text-align: center;
+}
+footer .flex-footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 56px 0;
-    text-align: center;
 }
 
 footer .footer-links {
@@ -328,6 +331,7 @@ footer .footer-links {
 
 footer .footer-links .logo-footer {
     width: 144px;
+    margin-inline: auto;
     margin-bottom: 32px;
 }
 
@@ -337,9 +341,6 @@ footer .footer-links .menu-footer {
     gap: 16px;
 }
 
-footer .socials {
-
-}
 
 footer .socials .socials-list {
     display: flex;
@@ -351,4 +352,102 @@ footer .socials .socials-list {
 
 footer .socials .copyright {
     color: rgba(255, 255, 255, .5);
+}
+
+/* ------------------------------------ * ----------------------------------- */
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 690px;
+    }
+
+    .container-header {
+        max-width: 690px;
+        margin-inline: auto;
+    }
+
+    #burger-menu {
+        display: none;
+    }
+
+    header {
+        min-height: 50vh;
+        background: url('./images/desktop/image-hero.jpg')no-repeat center center;
+        background-size: cover;
+    }
+    header nav {
+    padding-top: 48px;
+    
+
+    }
+
+    header h1 {
+        /* overflow: auto; */
+        margin-top: 24px;
+    }
+
+    header nav .menu {
+        display: flex;
+        min-width: initial;
+    min-height: initial;
+        visibility: initial;
+        opacity: initial;
+        padding-top: initial;
+        position: initial;
+        
+
+        gap: 32px;
+
+    }
+
+    header nav .menu.overlay {
+        visibility: hidden;
+    }
+
+    header nav .menu a {
+        font-size: initial;
+        text-transform: initial;
+        margin-bottom: 0;
+        color: var(--white);
+        font-family: var(--font-alata);
+    }
+
+    /* CREATIONS */
+    .creations {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .creations h2, .creations .cta {
+        grid-column: span 2;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 44px 0;
+    }
+
+    footer .flex-footer {
+        display: flex;
+        flex-direction: initial;
+        justify-content: space-between;
+        align-items: center; 
+    }
+
+    footer .footer-links {
+        margin-bottom: initial;
+    }
+
+    footer .footer-links .logo-footer {
+        margin-bottom: 14px;
+        margin-inline: initial;
+
+    }
+
+    footer .footer-links .menu-footer {
+        flex-direction: initial;
+    }
+
+    footer .socials .socials-list {
+        justify-content: flex-end;
+    }
+
 }
