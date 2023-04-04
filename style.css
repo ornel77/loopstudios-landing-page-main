@@ -71,7 +71,9 @@ header {
     min-height: 100vh;
     /* position: relative; */
 }
-
+header container-header {
+    max-width: 340px;
+}
 header nav {
     display: flex;
     justify-content: space-between;
@@ -220,24 +222,60 @@ header h1 {
 /*                              SECTION CREATION                              */
 /* -------------------------------------------------------------------------- */
 .creations {
-    margin-top: 100px;
+    margin: 100px 0;
+    display: grid;
+    gap:24px;
 }
 
 .creations h2 {
     text-align: center;
     font-size: 32px;
-    margin-bottom: 48px;
+    /* margin-bottom: 24px; */
 }
+
+.creations .cta {
+    border: 1px solid var(--black);
+    text-transform: uppercase;
+    padding: 13px 38px;
+    letter-spacing: 5px;
+    font-size: 14px;
+    transition: all 250ms ease-in-out;
+    order: 1;
+    width: 50%;
+    margin-inline: auto;
+    margin-top: 34px;
+}
+
+.creations .cta:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
 .creations .image-box {
+    position: relative;
     width: 100%;
     height: 120px;
     display: flex;
     align-items: flex-end;
     padding: 0 0 20px 20px;
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
+    cursor: pointer;
+    
+}
+
+.creations .image-box::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(270deg, rgba(0,0,0,0.01) 19%, rgba(0,0,0,0.69) 100%);
 }
 .creations .img-title {
     color: var(--white);
+    z-index: 40;
     font-size: 24px;
     font-weight: lighter;
 }
@@ -251,6 +289,7 @@ header h1 {
 }
 .creations .bg2 {
     background: url('./images/mobile/image-night-arcade.jpg') no-repeat center/cover;
+    
 }
 .creations .bg3 {
     background: url('./images/mobile/image-soccer-team.jpg') no-repeat center/cover;
@@ -271,3 +310,11 @@ header h1 {
     background: url('./images/mobile/image-fisheye.jpg') no-repeat center/cover;
 }
 
+
+/* -------------------------------------------------------------------------- */
+/*                                   FOOTER                                   */
+/* -------------------------------------------------------------------------- */
+footer {
+    background-color: var(--black);
+    color: var(--white);
+}
