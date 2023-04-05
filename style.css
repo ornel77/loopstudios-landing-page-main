@@ -82,7 +82,8 @@ header nav {
 header nav .logo {
     width: 144px;
     z-index: 10;
-    padding: 0 24px;
+    /* padding: 0 24px; */
+    margin-left: 24px;
     
 }
 
@@ -176,6 +177,10 @@ header nav .menu a {
 /* heading title */
 header .heading-title {
     padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 header h1 {
     color: var(--white);
@@ -184,11 +189,7 @@ header h1 {
     border: 1px solid var(--white);
     padding: 24px;
     
-    position: absolute;
-    /* right: 0; */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    
 }
 
 
@@ -207,8 +208,6 @@ header h1 {
     margin-top: 48px;
     font-size: 32px;
 }
-
-
 
 .interactive-description .interactive-text {
     margin-top: 16px;
@@ -258,6 +257,7 @@ header h1 {
     padding: 0 0 20px 20px;
     /* margin-bottom: 24px; */
     cursor: pointer;
+    color: var(--white);
     
 }
 
@@ -269,10 +269,9 @@ header h1 {
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(270deg, rgba(0,0,0,0.01) 19%, rgba(0,0,0,0.69) 100%);
+    background: linear-gradient(270deg, rgba(0,0,0,0.01) 19%, rgba(0,0,0,0.6) 100%);
 }
 .creations .img-title {
-    color: var(--white);
     z-index: 40;
     font-size: 24px;
     font-weight: lighter;
@@ -356,11 +355,17 @@ footer .socials .copyright {
 
 /* ------------------------------------ * ----------------------------------- */
 
+/* -------------------------------------------------------------------------- */
+/*                                MEDIA QUERIES                               */
+/* -------------------------------------------------------------------------- */
+
+
 @media screen and (min-width: 768px) {
     .container {
         max-width: 690px;
     }
 
+    /* HEADER */
     .container-header {
         max-width: 690px;
         margin-inline: auto;
@@ -389,27 +394,42 @@ footer .socials .copyright {
     header nav .menu {
         display: flex;
         min-width: initial;
-    min-height: initial;
+        min-height: initial;
         visibility: initial;
         opacity: initial;
         padding-top: initial;
         position: initial;
-        
-
         gap: 32px;
+        align-items: center;
 
     }
 
     header nav .menu.overlay {
         visibility: hidden;
     }
+    header nav .logo {
+        padding: 8px;
+    }
 
     header nav .menu a {
         font-size: initial;
         text-transform: initial;
-        margin-bottom: 0;
+        margin-bottom: initial;
         color: var(--white);
         font-family: var(--font-alata);
+    }
+
+    header nav .menu a::after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        padding-top: 8px;
+
+    }
+
+    header nav .menu a:hover::after {
+        border-bottom: 1px solid var(--white);
     }
 
     /* CREATIONS */
@@ -446,8 +466,155 @@ footer .socials .copyright {
         flex-direction: initial;
     }
 
-    footer .socials .socials-list {
-        justify-content: flex-end;
+    footer .footer-links a::after {
+        content: "";
+        display: block;
+        margin: 0 auto;
+        width: 50%;
+        padding-top: 8px;
+
     }
 
+    footer .footer-links a:hover::after {
+        border-bottom: 1px solid var(--white);
+    }
+
+    footer .socials .socials-list {
+        justify-content: flex-end;
+        margin-bottom: initial;
+    }
+
+    footer .socials .socials-list a {
+        padding-bottom: 4px;
+    }
+    footer .socials .socials-list a:hover {
+        border-bottom: 1px solid var(--white);
+
+    }
+
+}
+
+@media screen and (min-width: 1200px)  {
+    .container {
+        max-width: 1110px;
+    }
+
+    .container-header {
+        max-width: 1110px;
+    }
+
+    header {
+        min-height: 50vh;
+    }
+
+    header .heading-title {
+        transform: initial;
+        max-width: 400px;
+        left: initial;
+        transform: translateY(-50%);
+    }
+    header h1 {
+        text-align: left;
+        margin-top: 60px;
+    }
+
+    /* INTERACTIVE */
+    .interactive {
+        display: flex;
+        /* justify-content: flex-end; */
+        align-items: center;
+        position: relative;
+        text-align: left;
+    }
+
+    .interactive .interactive-img {
+        width: 50%;
+    }
+
+    .interactive-description {
+        position: absolute;
+        padding: 96px 0 0 96px;
+        bottom: 0;
+        right: 100px;
+        background-color: var(--white);
+        width: 50%;
+    }
+
+    .interactive-description h2 {
+        margin: initial;
+    }
+
+    /* CREATIONS */
+    .creations {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .creations h2 {
+        grid-column: span 3;
+        justify-self: flex-start;
+        align-self: center;
+    }
+
+    .creations .cta {
+        display: block;
+        order: 0;
+        grid-column: 4 / 4;
+        width: 70%;
+        align-self: center;
+        justify-self: flex-end;
+        margin: 0;
+    }
+
+    .creations .image-box {
+        height: 450px;
+    }
+
+    .creations .image-box::after {
+        content: "";
+        background: linear-gradient(270deg, rgba(0,0,0,0.01) 40%, rgba(0,0,0,0.6) 100%);
+        transition: all 250ms ease-in;
+
+    }
+    .creations .image-box:hover:after {
+        content: "";
+        background: none;
+        background-color: rgba(255, 255, 255, .75);
+        color: black;
+    }
+
+    .creations .image-box:hover:after .img-title {
+        color: black;
+
+    }
+
+    .creations .img-title {
+        color: white;
+    }
+
+    .creations .bg1 {
+        background: url('./images/desktop/image-deep-earth.jpg') no-repeat center/cover;
+    }
+    .creations .bg2 {
+        background: url('./images/desktop/image-night-arcade.jpg') no-repeat center/cover;
+        
+    }
+    .creations .bg3 {
+        background: url('./images/desktop/image-soccer-team.jpg') no-repeat center/cover;
+    }
+    .creations .bg4 {
+        background: url('./images/desktop/image-grid.jpg') no-repeat center/cover;
+    }
+    .creations .bg5 {
+        background: url('./images/desktop/image-from-above.jpg') no-repeat center/cover;
+    }
+    .creations .bg6 {
+        background: url('./images/desktop/image-pocket-borealis.jpg') no-repeat center/cover;
+    }
+    .creations .bg7 {
+        background: url('./images/desktop/image-curiosity.jpg') no-repeat center/cover;
+    }
+    .creations .bg8 {
+        background: url('./images/desktop/image-fisheye.jpg') no-repeat center/cover;
+    }
+    
 }
